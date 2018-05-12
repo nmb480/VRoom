@@ -1,0 +1,29 @@
+<div class="registration_index channel_info">
+  <div class="channel_registration"><%= link_to '登録', new_registration_path %></div>
+  <% @vtubers.each do |channel| %>
+  
+    <div class="channel_info_container flex">
+        
+        <div class="channel_image">
+          <div class="channel_icon"><%= link_to image_tag(channel.thumbnail), channel_path(channel.channelId) %></div>
+        </div>
+        
+        <div class="channel_info">
+          <div class="channel_name"><h3><%= channel.name %></h3></div>
+          <div class="channel_title"><%=link_to channel.channelTitle, channel_path(channel.channelId) %></div>
+          <% channel.get_channel_twitters(channel.channelId).each do |twitter| %>
+            <div class="channel_twitter_li"><%= link_to '@'+twitter, "https://twitter.com/#{twitter}" %> </div>
+          <% end %>
+        </div>
+        
+        <div class="channel_info">
+          <div class="channel_subscribers">チャンネル登録者数：<%= number_with_delimiter(channel.channel_statistic.subscriberCount) %></div>
+          <div class="channel_subscribers">チャンネル総再生回数：<%= number_with_delimiter(channel.channel_statistic.viewCount) %></div>
+          <div class="channel_movies">投稿した動画の数：<%= number_with_delimiter(channel.channel_statistic.videoCount) %></div>
+        </div>
+        
+      </div><!-- channel_info01 -->
+  
+  <% end %>
+</div>
+  

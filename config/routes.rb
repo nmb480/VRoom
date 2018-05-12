@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+    root to: 'toppages#index'
+    
+    resources :channels, only: [:show]
+    resources :registrations, only: [:index, :new, :create]
+    resources :channel_twitters, only: [:new, :create, :destroy]
+    
 end

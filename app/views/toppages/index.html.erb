@@ -1,0 +1,46 @@
+<div class="contents">
+  
+  <div class="contents_li now_on_air">
+    <h2>現在放送中のチャンネル</h2>
+    <div class="contents_li_movie flex">
+      <% @lives.each do |video| %>
+      
+        <div class="movie_box">
+          <div class="movie_sumbnail"><%= link_to image_tag(video.thumbnail, :alt => "サムネ"), "https://www.youtube.com/watch?v=#{video.liveId}", :target=>["_blank"] %></div>
+          <div class="movie_title"><%=link_to video.title, "https://www.youtube.com/watch?v=#{video.liveId}", :target=>["_blank"] %></div>
+          <div class="movie_channel"><%= link_to video.vtuber.channelTitle, channel_path(video.vtuber.channelId) %></div>
+        </div>
+        
+      <% end %>
+    </div>
+    
+    
+  </div>
+  
+  <div class="contents_li last_upload">
+    <h2>最新の投稿</h2>
+    
+    <div class="contents_li_movie flex">
+      <% @movies.each do |movie| %>
+      
+        <div class="movie_box">
+          <div class="movie_sumbnail"><%= link_to image_tag(movie.thumbnail, :alt => "サムネ"), "https://www.youtube.com/watch?v=#{movie.videoId}" %></div>
+          <div class="movie_title"><%=link_to movie.title, "https://www.youtube.com/watch?v=#{movie.videoId}" %></div>
+          <div class="movie_channel"><%= link_to movie.vtuber.channelTitle, channel_path(movie.vtuber.channelId) %></div>
+        </div>
+        
+      <% end %>
+    </div>
+    
+  </div>
+  
+  <div class="contents_li pick_up_vtuer">
+    <h2>Pick Up Vtuber</h2>
+    
+  </div>
+  
+  <div class="contents_li popular_movie">
+    <h2>人気の動画</h2>
+    
+  </div>
+</div>

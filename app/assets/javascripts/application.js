@@ -14,3 +14,45 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+//ツイッターのタブ変更(channel_twitter)
+$(document).on('turbolinks:load', function(){
+  
+  var twitter = ".channel_tweets"  
+    
+  $(twitter + ' .j_content').hide();
+  $(twitter + ' .0').show();
+  
+  $(twitter + ' .j_tab').click(function(){
+    //idを取得
+    var tag =  $(this).attr("value");
+    
+    //一旦全部消す
+    $(twitter + ' .j_content').hide();
+    
+    //クリックしたidと同じタイムラインを表示
+    $(twitter + " .j_content[value='" + tag + "']" ).show();
+  });
+ 
+});
+
+//ツイッターのタブ変更(channel_hashtag)
+$(document).on('turbolinks:load', function(){
+  
+  var twitter = ".channel_hashtags"  
+    
+  $(twitter + ' .j_content').hide();
+  $(twitter + ' .0').show();
+  
+  $(twitter + ' .j_tab').click(function(){
+    //idを取得
+    var tag =  $(this).attr("value");
+    
+    //一旦全部消す
+    $(twitter + ' .j_content').hide();
+    
+    //クリックしたidと同じタイムラインを表示
+    $(twitter + " .j_content[value='" + tag + "']" ).show();
+  });
+ 
+});

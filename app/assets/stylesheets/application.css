@@ -1,15 +1,281 @@
+@charset "UTF-8";
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+        変数指定・クラス設定
+================================================================ */
+/*  ブレークポイント  */
+/*  色指定  */
+/*  class設定  */
+.flex {
+  display: flex;
+  display: -webkit-flex;
+  /* Safari */ }
+
+a {
+  text-decoration: none;
+  color: #000000; }
+
+a:hover {
+  text-decoration: underline; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0; }
+
+.scroll::-webkit-scrollbar {
+  width: 12px; }
+
+.scroll::-webkit-scrollbar-track {
+  background: #fff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: inset 0 0 2px #777; }
+
+.scroll::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 10px;
+  box-shadow: none; }
+
+.no-scroll::-webkit-scrollbar {
+  display: none; }
+
+.section {
+  margin-top: 2em; }
+
+.invisible {
+  display: none; }
+
+/*
+        共通部分
+================================================================ */
+/*  body  */
+body {
+  font-size: 14px;
+  width: 98%;
+  max-width: 1280px;
+  margin: 0 auto; }
+
+/*  sidebar  */
+/*  header  */
+header {
+  margin-top: 5px; }
+  header .navbar {
+    margin-top: 5px; }
+  header .navbar_pc {
+    width: 100%;
+    height: 40px;
+    background-color: #222222;
+    font-size: 16px;
+    -webkit-justify-content: center;
+    /* Safari */
+    justify-content: center; }
+    header .navbar_pc .navbar_pc_li {
+      display: inline-block;
+      width: 250px;
+      text-align: center;
+      border-left: .5px solid #666666;
+      border-right: .5px solid #666666; }
+      header .navbar_pc .navbar_pc_li a {
+        color: #ffffff;
+        line-height: 40px;
+        vertical-align: middle; }
+      header .navbar_pc .navbar_pc_li:hover {
+        background-color: red; }
+  header .navbar_sp {
+    display: none; }
+
+/*  footer  */
+/*
+        body
+================================================================ */
+.movie_box {
+  width: 200px;
+  height: 200px; }
+  .movie_box .movie_sumbnail img {
+    max-width: 180px;
+    height: auto; }
+  .movie_box .movie_title, .movie_box .movie_channel {
+    font-size: 12px; }
+
+.channel_icon img {
+  height: 80px;
+  width: auto;
+  border-radius: 50%; }
+
+/*  toppage
+-------------------------------------------- */
+.contents_li {
+  margin-top: 20px;
+  border-bottom: solid gray .5px;
+  height: 250px; }
+  .contents_li h2 {
+    font-size: 16px;
+    font-weight: normal;
+    margin-left: 1.5em; }
+  .contents_li .contents_li_movie {
+    margin: 0 1.5em; }
+
+/*  channels 
+-------------------------------------------- */
+.channel_info .channel_info_container {
+  height: 80px;
+  padding: 1em 0; }
+  .channel_info .channel_info_container:last-child {
+    margin-left: auto; }
+  .channel_info .channel_info_container .channel_image, .channel_info .channel_info_container .channel_info, .channel_info .channel_info_container .channel_youtube {
+    margin: auto 0; }
+  .channel_info .channel_info_container .channel_info {
+    padding-top: .3em;
+    padding-left: 1em; }
+    .channel_info .channel_info_container .channel_info .channel_title {
+      color: gray;
+      font-size: 12px; }
+    .channel_info .channel_info_container .channel_info .channel_subscribers, .channel_info .channel_info_container .channel_info .channel_movies {
+      font-size: 14px; }
+  .channel_info .channel_info_container .channel_youtube {
+    margin-left: auto;
+    margin-right: 15%; }
+    .channel_info .channel_info_container .channel_youtube .btn_youtube {
+      margin: auto;
+      height: 50px;
+      width: 200px;
+      background-color: red;
+      border-radius: 3px;
+      text-align: center;
+      transition-duration: 300ms; }
+      .channel_info .channel_info_container .channel_youtube .btn_youtube a {
+        color: #ffffff;
+        display: block;
+        line-height: 50px; }
+    .channel_info .channel_info_container .channel_youtube .btn_youtube:hover {
+      border: 1px solid red;
+      background-color: #ffffff; }
+      .channel_info .channel_info_container .channel_youtube .btn_youtube:hover a {
+        color: red;
+        font-weight: bold; }
+.channel_info .channel_discription {
+  padding: .5em 1em;
+  font-size: 14px;
+  background-color: #F5F5F5;
+  height: 10em;
+  overflow: scroll;
+  overflow-x: hidden; }
+
+.channel_page .channel_info_container {
+  margin-bottom: 1.5em; }
+
+.tweets {
+  flex-direction: column;
+  height: 1000px;
+  overflow: scroll;
+  overflow-x: hidden; }
+  .tweets a:hover {
+    text-decoration: underline; }
+  .tweets .tweet {
+    border-bottom: solid .5px gray;
+    padding: .2em .2em; }
+    .tweets .tweet .tweet_header .tweet_icon img {
+      border-radius: 24px; }
+    .tweets .tweet .tweet_header .tweet_header_name {
+      flex-direction: column;
+      justify-content: center;
+      margin-left: .3em; }
+      .tweets .tweet .tweet_header .tweet_header_name .tweet_screen_name {
+        font-size: 14px;
+        color: gray; }
+    .tweets .tweet .tweet_header .twitter_icon {
+      margin-left: auto;
+      margin-top: .4em;
+      margin-right: .4em; }
+      .tweets .tweet .tweet_header .twitter_icon i {
+        color: #34abf3; }
+    .tweets .tweet .tweet_text {
+      font-size: 14px; }
+    .tweets .tweet .tweet_item img {
+      max-width: 100%; }
+
+.channel_tweets, .channel_hashtags {
+  width: 48%;
+  margin: 0 auto; }
+
+.timeline {
+  border-top: solid 1px #000000;
+  border-bottom: solid 1px #000000;
+  padding: .2em 0; }
+
+.channel_timeline .tags {
+  height: 25px; }
+  .channel_timeline .tags .twitter_tab {
+    display: block;
+    color: #ffffff;
+    background-color: red;
+    padding: .2em .1em;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    font-size: 14px;
+    cursor: pointer; }
+  .channel_timeline .tags .hashtag:hover {
+    background-color: rgba(255, 0, 0, 0.5); }
+
+/*  channel_twitter new
+-------------------------------------------- */
+.channel_twitter_content {
+  width: 70%;
+  max-width: 500px;
+  margin: 30px auto; }
+  .channel_twitter_content .twitter_new_form {
+    border: .5px #000000 solid;
+    border-radius: 7px;
+    padding: 0 1em; }
+    .channel_twitter_content .twitter_new_form .twitter_form {
+      width: 100%;
+      padding: 1em 0; }
+      .channel_twitter_content .twitter_new_form .twitter_form .form_btn {
+        width: 100%;
+        display: inline-block;
+        padding: 0.3em 1em;
+        text-decoration: none;
+        background-color: #ffffff;
+        color: red;
+        border: solid 2px red;
+        border-radius: 3px;
+        transition: .4s; }
+      .channel_twitter_content .twitter_new_form .twitter_form .form_btn:hover {
+        background: red;
+        color: white; }
+      .channel_twitter_content .twitter_new_form .twitter_form textarea {
+        width: 100%;
+        line-height: 1.5em;
+        border: 1px solid black;
+        border-radius: 5px;
+        resize: none;
+        font-size: 16px; }
+      .channel_twitter_content .twitter_new_form .twitter_form .registed_index {
+        flex-direction: column; }
+        .channel_twitter_content .twitter_new_form .twitter_form .registed_index .registed_li {
+          width: 100%; }
+          .channel_twitter_content .twitter_new_form .twitter_form .registed_index .registed_li .delete_btn {
+            font-size: 10px;
+            margin-left: 1.5em; }
+
+.channel_twitter_form {
+  border-bottom: .5px solid gray; }
+
+/*  registration
+-------------------------------------------- */
+.registration_index {
+  width: 90%;
+  margin: auto; }
+  .registration_index .channel_info_container {
+    border-bottom: .5px solid #000000; }
+    .registration_index .channel_info_container .channel_info {
+      margin-left: 1em; }
+      .registration_index .channel_info_container .channel_info .channel_subscribers, .registration_index .channel_info_container .channel_info .channel_movies {
+        font-size: 12px; }
+    .registration_index .channel_info_container .channel_twitter {
+      margin-left: 3em;
+      flex-direction: column;
+      font-size: 14px; }
+      .registration_index .channel_info_container .channel_twitter .channel_twitter_li {
+        font-size: 13px;
+        text-decoration: underline; }
+
+/*# sourceMappingURL=application.css.map */

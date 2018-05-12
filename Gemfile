@@ -51,3 +51,22 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Google API
+gem 'google-api-client', '<0.9'
+gem 'trollop', '~> 2.1'
+
+# 環境変数
+gem 'dotenv-rails'
+
+#デバッグ
+gem 'pry-byebug'
+
+#Twitter
+gem 'twitter'
+
+#fontawesome
+gem 'font-awesome-rails'
+
+#whenever(バッチ処理用のやつ)
+gem "whenever", require: false
